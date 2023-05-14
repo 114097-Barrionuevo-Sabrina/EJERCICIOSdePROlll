@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <style>
+                .separar{line-height: 1px ;}
+                .al_lado{ display: flex;align-items: center;}
+            </style>
+        </head>
+        <body>
+            <h1>Formulario de Registro</h1>
+            <hr>
+            <h2>Nombre y apellido</h2>
+            <div class="separar"> 
+                <h3>Nombre</h3>
+                <input type="text" name="nombre">
+                <h3>Primer Apellido</h3>
+                <input type="text" name="apellido">
+                <h3>segundo apellido</h3>
+                <input type="text" name="apellido">
+            </div>
+             <hr>
+             <h2>Direccion</h2>
+             <input type="text" name="calle">
+            <h3>Calle, Numero, Piso, Puerta</h3>
+
+            <div class="al_lado">
+              
+                <h3>codigo postal</h3>
+                <input type="text" name="CP">
+
+                <blockquote><h3>Municipio</h3></blockquote>
+                <input type="text" name="municipio">
+            </div>
+            
+            <div class="al_lado">
+                <h3>Provincia</h3>
+                <select name="Provincias">
+                    <option value="Cba">Cordoba</option>
+                    <option value="Men">Mendoza</option>
+                    <option value="Juy">Jujuy</option>
+                    <option value="BA">Buenos Aires </option>
+                </select>
+
+                <blockquote><h3>Pais</h3></blockquote>
+                <select name="Pais">
+                     <option value="Arg">Argentina</option>
+                     <option value="Chile">Chile</option>
+                     <option value="Brasil">Brasil</option>
+                     <option value="Uru">Uruguat </option>
+                </select>
+            </div>
+            <hr>
+            <h2>Email</h2>
+            <input type="text" name="email">
+            <hr>
+            <h2>Telefono</h2>
+            <h3>Fijo</h3>
+            <input type="tel" name="Fijo">
+            <h3>Movil</h3>
+            <input type="tel" name="Movil">
+            <hr>
+            <button type="button" onclick="alert('Registrado con exito')">Registrarse</button>
+        </body>
+</html>

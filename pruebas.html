@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tienda en línea</title>
+  <link rel="stylesheet" type="text/css" href="cssPP.css">
+</head>
+<body>
+  <header>
+    <h1>Tienda en línea</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Productos</a></li>        
+        <li><button onclick="habilitarCarrito()">Carrito</button></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <section id="productos">
+    <h2>Productos</h2>
+    <div class="producto">
+      <img src="imagen1.jpg" alt="Producto 1">
+      <h3>Producto 1</h3>
+      <p>$19.99</p>
+      <button>Agregar al carrito</button>
+    </div>
+    <div class="producto">
+      <img src="imagen2.jpg" alt="Producto 2">
+      <h3>Producto 2</h3>
+      <p >$24.99</p>
+      <button>Agregar al carrito</button>
+    </div>
+    <!--AGREGADO-->
+    <div id="producto" style="width: 18rem;">
+        <img src="https://salta.ceromarket.com.ar/wp-content/uploads/sites/12/2022/06/castanas-caju-naturales.jpg" class="card-img-top" alt="Castañas de Caju">
+        <div class="card-body">
+          <h5 class="card-title">Castaña de caju</h5>
+          <p class="card-text">Codigo: C001<br>Precio: 150 <br> Stock: 100</p>
+          <button>Agregar al carrito</button>
+        </div>
+      </div>
+    <!-- Agrega más productos aquí -->
+  </section>
+
+  <section id="carrito">
+    <h2>Carrito de compras</h2>
+    <ul id="lista-carrito">
+      <!-- Los elementos del carrito se agregarán dinámicamente aquí -->
+    </ul>
+    <p id="total-carrito">Total: $0</p>
+    <button id="vaciar-carrito">Vaciar carrito</button>
+    <button id="vaciar-carrito" onclick="OcultarCarrito()">Ocultar Carrito</button>
+  </section>
+
+
+
+  <script>
+    //funcion para habilitar el carrito
+    function habilitarCarrito() {
+        var carrito = document.getElementById("carrito");
+        carrito.style.display = "block";
+      }
+      function OcultarCarrito() {
+        var carrito = document.getElementById("carrito");
+        carrito.style.display = "none";
+      }
+  </script>
+
+  <script src="jsprueba.js"></script>
+</body>
+</html>

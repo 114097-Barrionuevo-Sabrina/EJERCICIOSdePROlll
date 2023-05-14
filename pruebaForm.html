@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulario Prueba</title>
+  <style>
+  
+    .error {
+      color:red;
+    }
+  </style>
+</head>
+<body>
+  <h2>Formulario de Registro</h2>
+  
+  <!--.form-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 300px;
+    }
+    
+    .form-container label {
+      margin-bottom: 5px;
+    }
+    
+    .form-container input {
+      margin-bottom: 10px;
+      padding: 5px;
+      width: 100%;
+    }
+    <div class="form-container">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" required>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+    
+    <label for="contrasena">Contraseña:</label>
+    <input type="password" id="contrasena" required>
+    
+    <input type="submit" value="Registrarse">
+  </div>-->
+  
+  <form id="myForm" onsubmit="return validateForm()">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" required>
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+    <br>
+    <label for="contrasena">Contraseña:</label>
+    <input type="password" id="contrasena" required>
+    <br>
+    <input type="submit" value="Registrarse">
+  </form>
+
+  <script>
+    function validateForm() {
+      var nombre = document.getElementById("nombre").value;
+      var email = document.getElementById("email").value;
+      var contrasena = document.getElementById("contrasena").value;
+      var isValid = true;
+
+      // Validar nombre (debe tener al menos 3 caracteres)
+      if (nombre.length < 3) {
+        document.getElementById("nombre").classList.add("error");
+        isValid = false;
+        return alert("El nombre debe tener al menos 3 letras!");
+      } else {
+        document.getElementById("nombre").classList.remove("error");
+      }
+
+      // Validar email (debe ser un formato válido)
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        document.getElementById("email").classList.add("error");
+        isValid = false;
+        return alert("el email debe tener un formato valido!");
+      } else {
+        document.getElementById("email").classList.remove("error");
+      }
+
+      // Validar contraseña (debe tener al menos 6 caracteres)
+      if (contrasena.length < 6) {
+        document.getElementById("contrasena").classList.add("error");
+        isValid = false;
+        return alert("la contraseña debe tener al menos 6 caracteres!");
+      } else {
+        document.getElementById("contrasena").classList.remove("error");
+      }
+
+      // Si hay errores, evita el envío del formulario
+      if (!isValid) {
+        event.preventDefault();
+        return alert("Hay errores en los datos ingresados!");
+      }
+      else{
+        return alert("ENVIADO CON EXITO!");
+      }
+
+      return isValid;
+    }
+  </script>
+</body>
+</html>
